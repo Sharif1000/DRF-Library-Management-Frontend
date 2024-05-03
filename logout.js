@@ -1,7 +1,7 @@
 const handlelogOut = () => {
   const token = localStorage.getItem("token");
 
-  fetch("http://127.0.0.1:8000/account/logout/", {
+  fetch("https://drf-library-management-1.onrender.com/account/logout/", {
     method: "POST",
     headers: {
       Authorization: `Token ${token}`,

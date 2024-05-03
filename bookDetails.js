@@ -4,7 +4,7 @@ const user_id = localStorage.getItem("user_id");
 console.log(user_id);
 
 const loadBookDetails = () => {
-  fetch(`http://127.0.0.1:8000/book/${bookId}`)
+  fetch(`https://drf-library-management-1.onrender.com/book/${bookId}`)
     .then(res => res.json())
     .then(book => {
       const booksContainer = document.getElementById("books");
@@ -33,7 +33,7 @@ const loadBookDetails = () => {
 
 
 const borrowBook = () => {
-  fetch(`http://127.0.0.1:8000/book/${bookId}/`)
+  fetch(`https://drf-library-management-1.onrender.com/book/${bookId}/`)
   .then(res => res.json())
   .then(book => {
         if (book.num_of_book > 0) {
@@ -42,7 +42,7 @@ const borrowBook = () => {
                 book.availability_status = false;
             }
 
-            fetch(`http://127.0.0.1:8000/book/${bookId}/`, {
+            fetch(`https://drf-library-management-1.onrender.com/book/${bookId}/`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const borrowBook = () => {
 
             .then(res => res.json())
             .then(() => {
-              fetch(`http://127.0.0.1:8000/borrower/`, {
+              fetch(`https://drf-library-management-1.onrender.com/borrower/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,6 +82,5 @@ const borrowBook = () => {
         console.error('There was an error fetching book details:', error);
     });
 };
-
 
 loadBookDetails();

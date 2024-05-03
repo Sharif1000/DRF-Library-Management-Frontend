@@ -1,7 +1,7 @@
 
 const loadCategory = () => {
   const dropdownButton = document.getElementById("dropdownMenuButton2");
-  fetch("http://127.0.0.1:8000/bookcategory/")
+  fetch("https://drf-library-management-1.onrender.com/bookcategory/")
     .then((res) => res.json())
     .then((data) => {
       data.forEach((item) => {
@@ -21,7 +21,7 @@ const loadCategory = () => {
 let booksData = [];
 
 const loadBooks = (categoryId, categoryName) => {
-  let url = "http://127.0.0.1:8000/book/";
+  let url = "https://drf-library-management-1.onrender.com/book/";
   if (categoryId) {
     url += `?category=${categoryId}`;
   }
@@ -85,9 +85,6 @@ searchBtn.addEventListener('click', () => {
     loadBooks();
   }
 });
-
-
-
 
 loadCategory();
 loadBooks();

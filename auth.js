@@ -24,7 +24,7 @@ const handleRegistration = (event) => {
     ) {
       console.log(info);
 
-      fetch("http://127.0.0.1:8000/account/register", {
+      fetch("https://drf-library-management-1.onrender.com/account/register", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(info),
@@ -53,7 +53,7 @@ const handleLogin = (event) => {
   const password = getValue("login-password");
   console.log(username, password);
   if ((username, password)) {
-    fetch("http://127.0.0.1:8000/account/login/", {
+    fetch("https://drf-library-management-1.onrender.com/account/login/", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ username, password }),
